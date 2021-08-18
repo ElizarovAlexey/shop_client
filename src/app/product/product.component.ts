@@ -32,11 +32,9 @@ export class ProductComponent implements OnInit {
         }
 
         this.products.forEach((element: any) => {
-            element.categories.forEach((cat: any) => {
-                if (cat.id === category.id) {
-                    this.sortedProducts.push(element)
-                }
-            });
+            if (element.category_id == category.id) {
+                this.sortedProducts.push(element)
+            }
         });
         this.filteredProducts = this.sortedProducts
     }
@@ -51,9 +49,15 @@ export class ProductComponent implements OnInit {
 
     ngOnInit(): void {
         if (this.products === null) {
-            this.getProductsService.getProducts().subscribe(data => {
-                this.products = data
-                this.filteredProducts = data
+            this.getProductsService.getProducts().subscribe((data: Array<Product> | any) => {
+                let productsInStock: any = [];
+                data.forEach((product: any) => {
+                    if (product.in_stock == true) {
+                        productsInStock.push(product);
+                    }
+                })
+                this.products = productsInStock;
+                this.filteredProducts = productsInStock;
             })
         }
     }

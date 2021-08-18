@@ -1,25 +1,35 @@
 <nav class="nav">
     <div class="container">
-        <ul class="nav__list">
-            <li class="nav__list-item">
-                <img class="nav__logo" src="../../assets/logo.png" alt="logo">
-            </li>
-            <li class="nav__list-item">
-                <a routerLink="/" routerLinkActive="active home" class="nav__list-link"
-                    [routerLinkActiveOptions]="{exact: true}">
-                    Главная
-                </a>
-            </li>
-            <li class="nav__list-item">
-                <a routerLink="/products" routerLinkActive="active products" class="nav__list-link">
-                    Товары
-                </a>
-            </li>
-            <li class="nav__list-item">
-                <a class="nav__list-link" href="#">
-                    Контакты
-                </a>
-            </li>
-        </ul>
+        <div class="nav__list">
+            <div class="nav__list-left">
+                <div class="nav__list-item">
+                    <img class="nav__logo" src="../../assets/logo.png" alt="logo">
+                </div>
+                <div class="nav__list-item">
+                    <a routerLink="/" routerLinkActive="active home" class="nav__list-link"
+                        [routerLinkActiveOptions]="{exact: true}">
+                        Главная
+                    </a>
+                </div>
+                <div class="nav__list-item">
+                    <a routerLink="/products" routerLinkActive="active products" class="nav__list-link">
+                        Товары
+                    </a>
+                </div>
+                <div class="nav__list-item">
+                    <a class="nav__list-link" href="#">
+                        Контакты
+                    </a>
+                </div>
+            </div>
+            <div class="nav__list-right">
+                <div class="nav__list-item">
+                    <img class="nav__search-image" src="../../assets/icon-search.png" alt="search">
+                </div>
+                <div class="nav__list-item">
+                    <img class="nav__cart-image" src="../../assets/icon-cart.png" alt="cart">
+                </div>
+            </div>
+        </div>
     </div>
 </nav>

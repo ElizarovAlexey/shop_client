@@ -1,13 +1,28 @@
 .container {
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: 1300px;
 }
 
 .nav__list {
     display: flex;
     justify-content: space-between;
-    list-style: none;
-    padding: 0 15px;
+    align-items: center;
+    padding: 15px;
+
+    &-left,
+    &-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-left {
+        width: 30%;
+    }
+
+    &-right {
+        width: 10%;
+    }
 
     &-link {
         text-decoration: none;
@@ -37,7 +52,7 @@
 }
 
 .nav {
-    margin: 10px 0 100px 0;
+    margin-bottom: 100px;
 
     & .active {
         color: #4B4CA5;
@@ -50,4 +65,12 @@
     width: 100%;
     max-width: 50px;
     margin-top: -10px;
+}
+
+.nav__search-image {
+    width: 30px;
+}
+
+.nav__cart-image {
+    width: 40px;
 }
