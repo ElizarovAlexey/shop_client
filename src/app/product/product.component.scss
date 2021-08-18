@@ -1,0 +1,43 @@
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.products {
+    margin-bottom: 100px;
+}
+
+.products__blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.products__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 15px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+
+    &-title {
+        margin-bottom: 15px;
+    }
+
+    &-price {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &-image {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 10px auto;
+    }
+}

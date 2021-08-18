@@ -1,0 +1,25 @@
+<nav class="nav">
+    <div class="container">
+        <ul class="nav__list">
+            <li class="nav__list-item">
+                <img class="nav__logo" src="../../assets/logo.png" alt="logo">
+            </li>
+            <li class="nav__list-item">
+                <a routerLink="/" routerLinkActive="active home" class="nav__list-link"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    Главная
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a routerLink="/products" routerLinkActive="active products" class="nav__list-link">
+                    Товары
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a class="nav__list-link" href="#">
+                    Контакты
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
