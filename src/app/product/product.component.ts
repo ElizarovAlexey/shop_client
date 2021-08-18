@@ -21,7 +21,25 @@ export class ProductComponent implements OnInit {
     sortedProducts: Product[] | any = []
     filteredProducts: Product[] | any = []
 
+    totalRecords: number | any;
+
     domain: string = 'http://127.0.0.1:5000/'
+
+    getProducts(page: any) {
+        this.getProductsService.getProducts(page).subscribe((data: any) => {
+            let productsInStock: any = [];
+            data.products.forEach((product: any) => {
+                if (product.in_stock == true) {
+                    productsInStock.push(product);
+                }
+            });
+
+            this.totalRecords = data.total_records;
+
+            this.products = productsInStock;
+            this.filteredProducts = productsInStock;
+        })
+    }
 
     changeCategory(category: any) {
         this.sortedProducts = []
@@ -39,6 +57,10 @@ export class ProductComponent implements OnInit {
         this.filteredProducts = this.sortedProducts
     }
 
+    changePage(event: any) {
+        this.getProducts(event.page + 1);
+    }
+
     ngOnChanges(): void {
         if (this.sortedProducts.length) {
             this.filteredProducts = this.sortedProducts
@@ -48,17 +70,6 @@ export class ProductComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        if (this.products === null) {
-            this.getProductsService.getProducts().subscribe((data: Array<Product> | any) => {
-                let productsInStock: any = [];
-                data.forEach((product: any) => {
-                    if (product.in_stock == true) {
-                        productsInStock.push(product);
-                    }
-                })
-                this.products = productsInStock;
-                this.filteredProducts = productsInStock;
-            })
-        }
+        this.getProducts(1)
     }
 }

@@ -11,6 +11,7 @@ import { IntroComponent } from './home/intro/intro.component';
 import { FooterComponent } from './footer/footer.component';
 import { GetProductsService } from './product/data-products.service';
 import { CategoriesComponent } from './product/categories/categories.component';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
     declarations: [
@@ -20,12 +21,13 @@ import { CategoriesComponent } from './product/categories/categories.component';
         HomeComponent,
         IntroComponent,
         FooterComponent,
-        CategoriesComponent
+        CategoriesComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        PaginatorModule
     ],
     providers: [GetProductsService],
     bootstrap: [AppComponent]

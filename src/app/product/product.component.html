@@ -1,13 +1,19 @@
 <div class="products">
     <div class="container">
-        <app-categories (onChangeCategory)="changeCategory($event)"></app-categories>
+        <div class="wrapper">
+            <app-categories (onChangeCategory)="changeCategory($event)"></app-categories>
 
-        <div class="products__blocks">
-            <div *ngFor="let product of filteredProducts" class="products__block">
-                <img class="products__block-image" src="{{ domain + product.image }}" alt="krossovor">
-                <p class="products__block-title">{{ product.title }}</p>
-                <p class="products__block-price">{{ product.price }} &#8381;</p>
+            <div class="products__blocks">
+                <div *ngFor="let product of filteredProducts" class="products__block">
+                    <img class="products__block-image" src="{{ domain + product.image }}" alt="krossovor">
+                    <p class="products__block-title">{{ product.title }}</p>
+                    <p class="products__block-price">{{ product.price }} &#8381;</p>
+                </div>
             </div>
+        </div>
+
+        <div class="products__pagination">
+            <p-paginator [rows]="3" (onPageChange)="changePage($event)" [totalRecords]="totalRecords"></p-paginator>
         </div>
     </div>
 </div>
