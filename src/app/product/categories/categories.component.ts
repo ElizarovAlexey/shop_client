@@ -26,7 +26,7 @@ export class CategoriesComponent implements OnInit {
     }
 
     selectAll() {
-        this.onChangeCategory.emit('all')
+        this.onChangeCategory.emit(0)
         this.categorySelected = 'Все кроссовки'
     }
 

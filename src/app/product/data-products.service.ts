@@ -8,8 +8,8 @@ export class GetProductsService {
 
     constructor(private http: HttpClient) { }
 
-    getProducts(page: any = 1) {
-        return this.http.get(`http://127.0.0.1:5000/products/?page=${page}`)
+    getProducts(category: number = 0, page: number = 1) {
+        return this.http.get(`http://127.0.0.1:5000/products?category=${category}&page=${page}`)
     }
 }
 

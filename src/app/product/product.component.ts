@@ -18,15 +18,14 @@ export class ProductComponent implements OnInit {
     constructor(private getProductsService: GetProductsService) { }
 
     products: Product[] | any = null
-    sortedProducts: Product[] | any = []
-    filteredProducts: Product[] | any = []
 
     totalRecords: number | any;
+    selectedCategory: number | any;
 
     domain: string = 'http://127.0.0.1:5000/'
 
-    getProducts(page: any) {
-        this.getProductsService.getProducts(page).subscribe((data: any) => {
+    getProducts(category: number, page: number) {
+        this.getProductsService.getProducts(category, page).subscribe((data: any) => {
             let productsInStock: any = [];
             data.products.forEach((product: any) => {
                 if (product.in_stock == true) {
@@ -37,39 +36,19 @@ export class ProductComponent implements OnInit {
             this.totalRecords = data.total_records;
 
             this.products = productsInStock;
-            this.filteredProducts = productsInStock;
         })
     }
 
     changeCategory(category: any) {
-        this.sortedProducts = []
-
-        if (category === 'all') {
-            this.filteredProducts = this.products
-            return
-        }
-
-        this.products.forEach((element: any) => {
-            if (element.category_id == category.id) {
-                this.sortedProducts.push(element)
-            }
-        });
-        this.filteredProducts = this.sortedProducts
+        this.getProducts(category.id, 1);
+        this.selectedCategory = category.id;
     }
 
-    changePage(event: any) {
-        this.getProducts(event.page + 1);
-    }
-
-    ngOnChanges(): void {
-        if (this.sortedProducts.length) {
-            this.filteredProducts = this.sortedProducts
-        }
-
-        this.filteredProducts = this.products
+    changePage(selectedCategory: number, event: any) {
+        this.getProducts(selectedCategory, event.page + 1);
     }
 
     ngOnInit(): void {
-        this.getProducts(1)
+        this.getProducts(0, 1)
     }
 }
