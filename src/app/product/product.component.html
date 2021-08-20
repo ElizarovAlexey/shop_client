@@ -1,22 +1,121 @@
-<div class="products">
-    <div class="container">
-        <div class="wrapper">
-            <app-categories (onChangeCategory)="changeCategory($event)"></app-categories>
+<div *ngIf="product !== undefined" class="container">
+    <div class="product">
+        <div class="product__image">
+            <img src="{{ domain + product.image }}" alt="image">
+        </div>
+        <div class="product__info">
+            <div class="product__title">
+                {{ product.title }}
+            </div>
+            <div class="product__articol">
+                Артикол: {{ product.uuid }}
+            </div>
+            <div class="product__price">
+                {{ product.price }} &#8381;
+            </div>
+            <div class="product__stock">
+                <img class="product__stock--image" src="../../assets/icon-ok.png" alt="in_stock">
+                <p class="product__stock--text">
+                    В наличии
+                </p>
+            </div>
+            <div class="product__sizes">
+                <p class="product__sizes--text">
+                    Выберите размер:
+                </p>
+                <p-selectButton class="product__selectSizes" [options]="product.sizes" [(ngModel)]="selectedSize"
+                    optionLabel="value" optionValue="value"></p-selectButton>
+            </div>
 
-            <div class="products__blocks">
-                <div *ngFor="let product of products" class="products__block">
-                    <div>
-                        <img class="products__block-image" src="{{ domain + product.image }}" alt="krossovor">
-                        <p class="products__block-title">{{ product.title }}</p>
-                    </div>
-                    <p class="products__block-price">{{ product.price }} &#8381;</p>
+            <p class="product__count--text">
+                Изменить количество:
+            </p>
+            <div class="product__count">
+                <div class="product__btn product__count--btn" (click)="handleProductsCount('minus')">
+                    -
+                </div>
+                <p class="product__count--counter">
+                    {{ productCount }}
+                </p>
+                <div class="product__btn product__count--btn" (click)="handleProductsCount('plus')">
+                    +
                 </div>
             </div>
-        </div>
 
-        <div class="products__pagination">
-            <p-paginator [rows]="3" (onPageChange)="changePage(selectedCategory, $event)" [totalRecords]="totalRecords">
-            </p-paginator>
+            <div class="product__cart--btn product__btn" (click)="sendToCart()">
+                Добавить в корзину
+            </div>
+
+            <hr class="product__separator">
+
+            <p-accordion class="product__accordion">
+                <p-accordionTab header="Характеристики">
+                    <p class="product__accordion--paragraph">
+                        <span>Пол:</span> Мужское
+                    </p>
+
+                    <p class="product__accordion--paragraph">
+                        <span>Цвета:</span> Зеленый
+                    </p>
+
+                    <p class="product__accordion--paragraph">
+                        <span>Страна:</span> Филиппины
+                    </p>
+
+                    <p class="product__accordion--paragraph">
+                        <span>Состав:</span> Кожа, текстиль, резинаки
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Доставка">
+                    <p class="product__accordion--paragraph">
+                        <span>Доставка по Москве:</span>
+                    </p>
+
+                    <ul class="product__accordion--list">
+                        <li>
+                            Бесплатная доставка курьерской службой RedExpress в пределах МКАД.
+                        </li>
+                        <li>
+                            Доставка курьером в удобное для вас время в пределах МКАД 300 руб.
+                        </li>
+                        <li>
+                            Срочная доставка день в день в пределах МКАД (при заказе до 14:00)
+                        </li>
+                    </ul>
+
+                    <p class="product__accordion--paragraph">
+                        <span>Доставка по России:</span>
+                    </p>
+                    <ul class="product__accordion--list">
+                        <li>
+                            Почта России. Срок доставки от 4 до 20 дней (Бесплатная доставка при полной предоплате
+                            заказов от 10 000 руб).
+                        </li>
+                        <li>
+                            СДЕК. Сроки доставки 2-12 дней.
+                        </li>
+                        <li>
+                            Боксберри. Сроки доставки 2-12 дней.
+                        </li>
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="Оплата">
+                    <p class="product__accordion--paragraph">
+                        <span>Доступные способы оплаты:</span>
+                    </p>
+                    <ul class="product__accordion--list">
+                        <li>
+                            Наличными при получении.
+                        </li>
+                        <li>
+                            Оплата он-лайн всеми популярными способами (Visa, Mastercard и тд.)
+                        </li>
+                    </ul>
+                    <p class="product__accordion--paragraph">
+                        Товары со скидкой отправляются по России только по полной предоплате.
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
         </div>
     </div>
 </div>

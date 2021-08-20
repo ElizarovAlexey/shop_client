@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GetProductsService } from './data-products.service';
-
-interface Product {
-    title: string,
-    price: number,
-    uuid: string,
-    image: string
-}
+import { ActivatedRoute, Router } from '@angular/router';
+import { ConfirmationService } from 'primeng/api';
+import { DataProductService } from './data-product.service';
+import { Product } from './data-product.service'
 
 @Component({
     selector: 'app-product',
@@ -15,40 +11,69 @@ interface Product {
 })
 export class ProductComponent implements OnInit {
 
-    constructor(private getProductsService: GetProductsService) { }
+    constructor(private activatedRoute: ActivatedRoute,
+        private router: Router,
+        private productService: DataProductService) { }
 
-    products: Product[] | any = null
+    uuid: string = '';
+    product: Product | any;
+    domain: string = 'http://127.0.0.1:5000/';
 
-    totalRecords: number | any;
-    selectedCategory: number | any;
+    productCount: number = 1;
+    selectedSize: any;
 
-    domain: string = 'http://127.0.0.1:5000/'
+    getProduct(uuid: string) {
+        this.productService.getProduct(uuid).subscribe((data: any) => {
+            this.product = data.product;
 
-    getProducts(category: number, page: number) {
-        this.getProductsService.getProducts(category, page).subscribe((data: any) => {
-            let productsInStock: any = [];
-            data.products.forEach((product: any) => {
-                if (product.in_stock == true) {
-                    productsInStock.push(product);
-                }
+            this.product.sizes = data.sizes.slice(0);
+            this.product.sizes.sort((a: any, b: any) => {
+                let x = a.value;
+                let y = b.value;
+                return x < y ? -1 : x > y ? 1 : 0;
             });
+        });
+    }
 
-            this.totalRecords = data.total_records;
-
-            this.products = productsInStock;
+    postCart(body: any) {
+        this.productService.sendToCart(body).subscribe(data => {
         })
     }
 
-    changeCategory(category: any) {
-        this.getProducts(category.id, 1);
-        this.selectedCategory = category.id;
+    handleProductsCount(operation: string) {
+        switch (operation) {
+            case 'plus':
+                this.productCount++;
+                break;
+            case 'minus':
+                if (this.productCount <= 1) {
+                    break;
+                }
+                this.productCount--
+                break;
+        }
     }
 
-    changePage(selectedCategory: number, event: any) {
-        this.getProducts(selectedCategory, event.page + 1);
+    sendToCart() {
+        let body = {
+            product_title: this.product.title,
+            product_price: this.product.price,
+            product_image: this.product.image,
+            product_size: this.selectedSize,
+            product_count: this.productCount,
+            product_uuid: this.product.uuid,
+        }
+
+        this.postCart(body);
+        this.router.navigate(['/products']);
     }
 
     ngOnInit(): void {
-        this.getProducts(0, 1)
+        this.activatedRoute.params.forEach(param => {
+            this.uuid = param['uuid'];
+        });
+
+        this.getProduct(this.uuid);
     }
+
 }
