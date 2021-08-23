@@ -45,6 +45,10 @@
         transition: width 0.3s ease-out;
     }
 
+    &-item:hover {
+        cursor: pointer;
+    }
+
     &-link:hover:after,
     &-link:focus::after {
         width: 100%;
@@ -64,7 +68,7 @@
     display: block;
     width: 100%;
     max-width: 50px;
-    margin-top: -10px;
+    margin-top: -30px;
 }
 
 .nav__search-image {

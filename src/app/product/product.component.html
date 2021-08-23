@@ -11,7 +11,7 @@
                 Артикол: {{ product.uuid }}
             </div>
             <div class="product__price">
-                {{ product.price }} &#8381;
+                {{ product.price | currency: '&#8381; ':'code' }}
             </div>
             <div class="product__stock">
                 <img class="product__stock--image" src="../../assets/icon-ok.png" alt="in_stock">

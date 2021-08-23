@@ -16,6 +16,8 @@ import { ProductComponent } from './product/product.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartComponent } from './cart/cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         IntroComponent,
         FooterComponent,
         CategoriesComponent,
-        ProductComponent
+        ProductComponent,
+        CartComponent
     ],
     imports: [
         BrowserModule,
@@ -37,6 +40,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         SelectButtonModule,
         AccordionModule,
         BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [GetProductsService],
     bootstrap: [AppComponent]

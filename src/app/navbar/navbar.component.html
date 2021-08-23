@@ -3,7 +3,8 @@
         <div class="nav__list">
             <div class="nav__list-left">
                 <div class="nav__list-item">
-                    <img class="nav__logo" src="../../assets/logo.png" alt="logo">
+                    <img routerLink="/" routerLinkActive="active home" [routerLinkActiveOptions]="{exact: true}"
+                        class="nav__logo" src="../../assets/logo.png" alt="logo">
                 </div>
                 <div class="nav__list-item">
                     <a routerLink="/" routerLinkActive="active home" class="nav__list-link"
@@ -27,7 +28,7 @@
                     <img class="nav__search-image" src="../../assets/icon-search.png" alt="search">
                 </div>
                 <div class="nav__list-item">
-                    <img class="nav__cart-image" src="../../assets/icon-cart.png" alt="cart">
+                    <img class="nav__cart-image" routerLink="/cart" src="../../assets/icon-cart.png" alt="cart">
                 </div>
             </div>
         </div>
