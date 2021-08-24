@@ -17,23 +17,23 @@ export class CategoriesComponent implements OnInit {
 
     constructor(private categoriesServise: DataCategoriesService) { }
 
-    categories: Category | any = null
-    categorySelected: string | any = 'Все кроссовки'
+    categories: Category | any = null;
+    categorySelected: string | any = 'Все кроссовки';
 
     selectCategory(category: any) {
-        this.categorySelected = category.name
-        this.onChangeCategory.emit(category)
+        this.categorySelected = category.name;
+        this.onChangeCategory.emit(category);
     }
 
     selectAll() {
-        this.onChangeCategory.emit(0)
-        this.categorySelected = 'Все кроссовки'
+        this.onChangeCategory.emit(0);
+        this.categorySelected = 'Все кроссовки';
     }
 
     ngOnInit(): void {
-        if (this.categories === null) {
+        if (this.categories == null) {
             this.categoriesServise.getCategories().subscribe(data => {
-                this.categories = data
+                this.categories = data;
             })
         }
     }

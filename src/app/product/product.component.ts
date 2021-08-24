@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
 
     postCart(body: any) {
         this.productService.sendToCart(body).subscribe(data => {
-        })
+        });
     }
 
     handleProductsCount(operation: string) {

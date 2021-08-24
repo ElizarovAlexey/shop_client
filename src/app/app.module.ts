@@ -18,6 +18,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         FooterComponent,
         CategoriesComponent,
         ProductComponent,
-        CartComponent
+        CartComponent,
+        ContactsComponent
     ],
     imports: [
         BrowserModule,

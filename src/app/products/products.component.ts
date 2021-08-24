@@ -51,6 +51,6 @@ export class ProductsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getProducts(0, 1)
+        this.getProducts(0, 1);
     }
 }
