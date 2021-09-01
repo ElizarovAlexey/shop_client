@@ -25,7 +25,7 @@ export class DataProductService {
         return this.http.get(`http://127.0.0.1:5000/products/${uuid}/`);
     }
 
-    sendToCart(body: any) {
+    sendToCart(body: Object) {
         return this.http.post(`http://127.0.0.1:5000/cart/`, body);
     }
 }

@@ -1,5 +1,16 @@
 .intro {
     margin-bottom: 100px;
+    min-height: calc(100vh - 220px);
+
+    &__sales {
+        margin-bottom: 50px;
+
+        &-image {
+            max-width: 1300px;
+            display: block;
+            margin: 0 auto 50px auto;
+        }
+    }
 }
 
 .container {
@@ -10,6 +21,8 @@
 .intro__cards {
     display: flex;
     justify-content: space-between;
+
+    margin-bottom: 100px;
 }
 
 .intro__card {

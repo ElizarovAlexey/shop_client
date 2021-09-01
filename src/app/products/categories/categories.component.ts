@@ -17,8 +17,8 @@ export class CategoriesComponent implements OnInit {
 
     constructor(private categoriesServise: DataCategoriesService) { }
 
-    categories: Category | any = null;
-    categorySelected: string | any = 'Все кроссовки';
+    categories: Category[];
+    categorySelected: string = 'Все кроссовки';
 
     selectCategory(category: any) {
         this.categorySelected = category.name;
@@ -32,7 +32,7 @@ export class CategoriesComponent implements OnInit {
 
     ngOnInit(): void {
         if (this.categories == null) {
-            this.categoriesServise.getCategories().subscribe(data => {
+            this.categoriesServise.getCategories().subscribe((data: any) => {
                 this.categories = data;
             })
         }

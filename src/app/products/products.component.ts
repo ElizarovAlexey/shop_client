@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { GetProductsService } from './data-products.service';
 
 interface Product {
@@ -16,18 +15,18 @@ interface Product {
 })
 export class ProductsComponent implements OnInit {
 
-    constructor(private getProductsService: GetProductsService, private activatedRoute: ActivatedRoute, private router: Router) { }
+    constructor(private getProductsService: GetProductsService) { }
 
-    products: Product[] | any = null;
+    products: Product[];
 
-    totalRecords: number | any;
-    selectedCategory: number | any;
+    totalRecords: number;
+    selectedCategory: number;
 
     domain: string = 'http://127.0.0.1:5000/'
 
     getProducts(category: number, page: number) {
         this.getProductsService.getProducts(category, page).subscribe((data: any) => {
-            let productsInStock: any = [];
+            let productsInStock = [];
             data.products.forEach((product: any) => {
                 if (product.in_stock == true) {
                     productsInStock.push(product);

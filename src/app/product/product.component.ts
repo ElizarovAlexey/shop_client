@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConfirmationService } from 'primeng/api';
 import { DataProductService } from './data-product.service';
 import { Product } from './data-product.service'
 
@@ -35,7 +34,7 @@ export class ProductComponent implements OnInit {
         });
     }
 
-    postCart(body: any) {
+    postCart(body: Object) {
         this.productService.sendToCart(body).subscribe(data => {
         });
     }

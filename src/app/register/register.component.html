@@ -1,0 +1,40 @@
+<div class="register">
+    <div class="container">
+        <p class="register__label">
+            Создайте аккаунт
+        </p>
+        <form [formGroup]="registerForm" action="/register" (ngSubmit)="registerAccount()" class="register__form">
+            <label for="register__form-login">Логин</label>
+            <app-validation-error-show [control]="registerForm.controls.login"></app-validation-error-show>
+            <input [ngClass]="{'invalid': registerForm.controls.login.errors && registerForm.controls.login.touched}"
+                formControlName="login" class="register__form-input" id="register__form-login" type="text"
+                placeholder="Login">
+
+            <label for="register__form-email">Email</label>
+            <app-validation-error-show [control]="registerForm.controls.email"></app-validation-error-show>
+            <input [ngClass]="{'invalid': registerForm.controls.email.errors && registerForm.controls.email.touched}"
+                formControlName="email" class="register__form-input" id="register__form-email" type="email"
+                placeholder="sneakers@gmail.com">
+
+            <label for="register__form-password">Пароль</label>
+            <app-validation-error-show [control]="registerForm.controls.password"></app-validation-error-show>
+            <input
+                [ngClass]="{'invalid': registerForm.controls.password.errors && registerForm.controls.password.touched}"
+                formControlName="password" class="register__form-input" id="register__form-password" type="password"
+                placeholder="********">
+
+            <label for="register__form-password">Повторите пароль</label>
+            <app-validation-error-show [control]="registerForm.controls.confirmPassword"></app-validation-error-show>
+            <input
+                [ngClass]="{'invalid': registerForm.controls.confirmPassword.errors && registerForm.controls.confirmPassword.touched}"
+                formControlName="confirmPassword" class="register__form-input" id="register__form-confirmPassword"
+                type="password" placeholder="********">
+            <button type="submit" class="register__form--button">
+                Регистрация
+            </button>
+        </form>
+        <p class="register__answer">
+            У вас уже есть аккаунт? <a>Войти</a>
+        </p>
+    </div>
+</div>

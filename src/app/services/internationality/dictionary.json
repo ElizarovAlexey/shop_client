@@ -1,0 +1,517 @@
+{
+    "minLengthError": {
+        "ru": "Минимальная длина %0 символов (введено %1).",
+        "ro": "Lungime minimă %0 caractere (introduse %1).",
+        "en": "Minimum length %0 characters (entered %1)."
+    },
+    "minNumberError": {
+        "ru": "Значение должно быть >= %0 (%1 < %0).",
+        "ro": "Valoarea trebuie să fie >= %0 (%1 < %0).",
+        "en": "The value must be >= %0 (%1 < %0)."
+    },
+    "maxNumberError": {
+        "ru": "Значение должно быть <= %0 (%1 > %0).",
+        "ro": "Valoarea trebuie să fie <= %0 (%1 > %0).",
+        "en": "The value must be <= %0 (%1 > %0)."
+    },
+    "requiredError": {
+        "ru": "Обязательное поле.",
+        "ro": "Câmp obligatoriu.",
+        "en": "Obligatory field."
+    },
+    "invalidEmailError": {
+        "ru": "Введён невалидный email.",
+        "ro": "E-mail nevalid introdus.",
+        "en": "Invalid email entered."
+    },
+    "maxLengthError": {
+        "ru": "Максимальная длина %0 символов (введено %1).",
+        "ro": "Lungime maximă %0 caractere (introduse %1).",
+        "en": "Maximum length %0 characters (entered %1)."
+    },
+    "patternError": {
+        "ru": "Значение должно соответствовать регулярному выражению \"%0\".",
+        "ro": "Valoarea trebuie să se potrivească cu expresia regulată \"%0\".",
+        "en": "The value must match the regular expression \"%0\"."
+    },
+    "passwordConfirmError": {
+        "ru": "Пароли должны совпадать.",
+        "ro": "Parolele trebuie să se coincidă.",
+        "en": "Passwords must match."
+    },
+    "trimError": {
+        "ru": "Значение не должно начинаться или заканчиваться пробельными символами.",
+        "ro": "Valoarea nu trebuie să înceapă sau să se termine cu spații albe.",
+        "en": "The value must not start or end with whitespace."
+    },
+    "invalidPhoneError": {
+        "ru": "Телефон может содержать только цифры, пробелы и знаки тире.",
+        "ro": "Telefonul poate conține numai numere, spații și liniuțe.",
+        "en": "The phone can only contain numbers, spaces and dashes."
+    },
+    "emailIsBusyError": {
+        "ru": "Email занят.",
+        "ro": "E-mailul este ocupat.",
+        "en": "Email is busy."
+    },
+    "unknownError": {
+        "ru": "Неизвеcтная ошибка. Администратор оповещён. Извините.",
+        "ro": "Eroare necunoscută. Administratorul a fost notificat. Scuzati-ma.",
+        "en": "Unknown error. The administrator has been notified. Excuse me."
+    },
+    "success": {
+        "ru": "Успех",
+        "ro": "Succes",
+        "en": "Success"
+    },
+    "registerStep1Msg": {
+        "ru": "На вашу почту было отправлено письмо. Для завершения регистрации перейдите по ссылке, содержащейся в письме.",
+        "ro": "V-a fost trimisă o scrisoare prin e-mail. Pentru a finaliza înregistrarea, urmați linkul din scrisoare.",
+        "en": "A letter has been sent to your mail. To complete the registration, follow the link contained in the letter."
+    },
+    "registerStep2Msg": {
+        "ru": "Вы активировали свой аккаунт.",
+        "ro": "V-ați activat contul.",
+        "en": "You have activated your account."
+    },
+    "invalidLinkError": {
+        "ru": "Эта ссылка более не доступна.",
+        "ro": "Acest link nu mai este disponibil.",
+        "en": "This link is no longer available."
+    },
+    "error": {
+        "ru": "Ошибка",
+        "ro": "Eroare",
+        "en": "Error"
+    },
+    "invalidEmailOrPasswordError": {
+        "ru": "Невеный логин или пароль",
+        "ro": "Parola sau username incorect",
+        "en": "Wrong login or password"
+    },
+    "userIsBlockError": {
+        "ru": "Пользователь заблокирован",
+        "ro": "User is blocked",
+        "en": "Utilizatorul este blocat"
+    },
+    "userNotIsActiveError": {
+        "ru": "Пользователь не активен. Для активации аккаунта перейдите по ссылке, присланой вам на почту.",
+        "ro": "Utilizatorul nu este activ. Pentru a vă activa contul, urmați linkul care a fost trimis la adresa dvs. de e-mail.",
+        "en": "The user is not active. To activate your account, follow the link that was sent to your email."
+    },
+    "messagesLimitError": {
+        "ru": "Извините, но с вашего аккаунта было отправлено слишком много электронных писем. Попробуйте повторить действие завтра.",
+        "ro": "Ne pare rău, dar au fost trimise prea multe e-mailuri din contul dvs. Incearcă din nou mâine.",
+        "en": "Sorry, but too many emails have been sent from your account. Try again tomorrow."
+    },
+    "userNotExistsError": {
+        "ru": "Пользователь не существует",
+        "ro": "Utilizatorul nu exista",
+        "en": "User does not exist"
+    },
+    "forgotPasswordStep1Msg": {
+        "ru": "На вашу почту было отправлено письмо. Для восстановления пароля перейдите по ссылке, содержащейся в письме.",
+        "ro": "V-a fost trimisă o scrisoare prin e-mail. Pentru a vă recupera parola, urmați linkul din scrisoare.",
+        "en": "A letter has been sent to your mail. To recover your password, follow the link contained in the letter."
+    },
+    "invalidPasswordError": {
+        "ru": "Неверный пароль.",
+        "ro": "Parolă Invalidă.",
+        "en": "Invalid password."
+    },
+    "passwordHasChanged": {
+        "ru": "Пароль был изменён.",
+        "ro": "Parola a fost schimbată.",
+        "en": "Password has been changed."
+    },
+    "fileSizeError": {
+        "ru": "Размер файла %0 байт (максимальный размер файла %1 байт).",
+        "ro": "Dimensiunea fișierului %0 octeți (dimensiunea maximă a fișierului %1 octeți).",
+        "en": "File size %0 bytes (maximum file size %1 bytes)."
+    },
+    "name": {
+        "ru": "Имя Фамилия",
+        "ro": "Nume Prenume",
+        "en": "Name surname"
+    },
+    "email": {
+        "ru": "Эл. адрес",
+        "ro": "Email",
+        "en": "E-mail"
+    },
+    "phone": {
+        "ru": "Телефон",
+        "ro": "Telefon",
+        "en": "Phone"
+    },
+    "comment": {
+        "ru": "Комментарий",
+        "ro": "Comentariu",
+        "en": "Comment"
+    },
+    "filter": {
+        "ru": "ФИЛЬТР ПО КАТЕГОРИИ:",
+        "ro": "FILTREAZĂ ÎN FUNCȚIE DE CATEGORIE:",
+        "en": "FILTER BY CATEGORY:"
+    },
+    "confirmPass": {
+        "ru": "Подтвердите пароль",
+        "ro": "Confirmă parola",
+        "en": "Confirm your password"
+    },
+    "oldPassword": {
+        "ru": "Текущий пароль",
+        "ro": "Parola curentă",
+        "en": "Current password"
+    },
+    "newPassword": {
+        "ru": "Новый пароль",
+        "ro": "Parola nouă",
+        "en": "New password"
+    },
+    "password": {
+        "ru": "Пароль",
+        "ro": "Parola",
+        "en": "Password"
+    },
+    "remember": {
+        "ru": "Запомнить меня",
+        "ro": "Ține-mă minte",
+        "en": "Remember me"
+    },
+    "signIn": {
+        "ru": "Войти",
+        "ro": "Intră",
+        "en": "Sign in"
+    },
+    "signOut": {
+        "ru": "Выйти",
+        "ro": "Ieși",
+        "en": "Sign out"
+    },
+    "save": {
+        "ru": "Сохранить",
+        "ro": "Salvați",
+        "en": "Save"
+    },
+    "changePersonalDataSuccessMsg": {
+        "ru": "Персональные данные изменены.",
+        "ro": "Datele personale au fost modificate.",
+        "en": "Personal data has been changed."
+    },
+    "notEventsOnSelectedDay": {
+        "ru": "На этот день нет запланированных мероприятий",
+        "ro": "Nu există evenimente programate pentru această zi.",
+        "en": "There are no scheduled events for this day."
+    },
+    "notEventsOnNearestDays": {
+        "ru": "На ближайшее время нет запланированных мероприятий",
+        "ro": "Nu există evenimente programate pentru viitorul apropiat.",
+        "en": "There are no scheduled events for the near future."
+    },
+    "ordersListIsEmpty": {
+        "ru": "Список заказов пуст",
+        "ro": "Lista de comenzi este goală",
+        "en": "The order list is empty"
+    },
+    "search": {
+        "ru": "Поиск",
+        "ro": "Căutare",
+        "en": "Search"
+    },
+    "seatsOcuppiedError": {
+        "ru": "Одно или несколько мест были заняты",
+        "ro": "Au fost ocupate unul sau mai multe locuri",
+        "en": "One or more seats were occupied"
+    },
+    "notEndedPaymentsUserDailyLimitError": {
+        "ru": "Сегодня вами было сделано слишком много незавершённых платежей. Дневной лимит исчерпан. Попробуйте завтра.",
+        "ro": "Astăzi s-au făcut prea multe plăți restante. Limita zilnică a fost atinsă. Încearcă-l mâine.",
+        "en": "Too many outstanding payments were made today. The daily limit has been reached. Try it tomorrow."
+    },
+    "orderAccepted": {
+        "ru": "Заказ принят",
+        "ro": "Comanda este acceptată",
+        "en": "Order is accepted"
+    },
+    "contacts": {
+        "ru": "Контакты",
+        "ro": "Contacte",
+        "en": "Сontacts"
+    },
+    "socialNetworks": {
+        "ru": "Социальные сети",
+        "ro": "Retele sociale",
+        "en": "Social networks"
+    },
+    "downloadApp": {
+        "ru": "Скачайте приложение",
+        "ro": "Descărcați aplicația",
+        "en": "Download application"
+    },
+    "nearestEvents": {
+        "ru": "Ближайшие события",
+        "ro": "Evenimente viitoare",
+        "en": "Upcoming events"
+    },
+    "genre": {
+        "ru": "Жанр",
+        "ro": "Gen",
+        "en": "Genre"
+    },
+    "today": {
+        "ru": "Сегодня",
+        "ro": "Azi",
+        "en": "Today"
+    },
+    "tomorrow": {
+        "ru": "Завтра",
+        "ro": "Mâine",
+        "en": "Tomorrow"
+    },
+    "all": {
+        "ru": "Все",
+        "ro": "Tot",
+        "en": "All"
+    },
+    "from": {
+        "ru": "от",
+        "ro": "din",
+        "en": "from"
+    },
+    "otherEvents": {
+        "ru": "Другие события",
+        "ro": "Alte evenimente",
+        "en": "Other events"
+    },
+    "duration": {
+        "ru": "Длительность",
+        "ro": "Durată",
+        "en": "Duration"
+    },
+    "age": {
+        "ru": "Возраст",
+        "ro": "Vârstă",
+        "en": "Age"
+    },
+    "seance": {
+        "ru": "Сеанс",
+        "ro": "Sesiune",
+        "en": "Seance"
+    },
+    "emptySeats": {
+        "ru": "Свободные места",
+        "ro": "Locuri libere",
+        "en": "Empty seats"
+    },
+    "orderTickets": {
+        "ru": "Заказать билеты",
+        "ro": "Comandă bilete",
+        "en": "Order a tickets"
+    },
+    "delete": {
+        "ru": "Удалить",
+        "ro": "Șterge",
+        "en": "Delete"
+    },
+    "row": {
+        "ru": "Ряд",
+        "ro": "Rând",
+        "en": "Row"
+    },
+    "seat": {
+        "ru": "Место",
+        "ro": "Loc",
+        "en": "Seat"
+    },
+    "listOfSelectedSeats": {
+        "ru": "Список выбранных мест",
+        "ro": "Lista locațiilor selectate",
+        "en": "List of selected seats"
+    },
+    "seanceDate": {
+        "ru": "Дата сеанса",
+        "ro": "Data sesiunii",
+        "en": "Seance date"
+    },
+    "description": {
+        "ru": "Описание",
+        "ro": "Descriere",
+        "en": "Description"
+    },
+    "minutes": {
+        "ru": "минут",
+        "ro": "minute",
+        "en": "minutes"
+    },
+    "orderConfirmation": {
+        "ru": "Подтверждение заказа",
+        "ro": "Confirmarea unei comenzi",
+        "en": "Order confirmation"
+    },
+    "sum": {
+        "ru": "Сумма",
+        "ro": "Cantitate",
+        "en": "Sum"
+    },
+    "pay": {
+        "ru": "Оплатить",
+        "ro": "Plătiți",
+        "en": "Pay"
+    },
+    "profileEdit": {
+        "ru": "Редактирование профиля",
+        "ro": "Editarea unui profil",
+        "en": "Editing a profile"
+    },
+    "editProfile": {
+        "ru": "Редактировать профиль",
+        "ro": "Editează profilul",
+        "en": "Edit profile"
+    },
+    "changePassword": {
+        "ru": "Изменить пароль",
+        "ro": "Schimbați parola",
+        "en": "Change password"
+    },
+    "passwordChange": {
+        "ru": "Смена пароля",
+        "ro": "Schimbarea parolei",
+        "en": "Password change"
+    },
+    "forgotPasswordQuestion": {
+        "ru": "Вы забыли свой пароль?",
+        "ro": "Ți-ai uitat parola?",
+        "en": "Forgot your password?"
+    },
+    "orderNumber": {
+        "ru": "Номер заказа",
+        "ro": "Număr de ordine",
+        "en": "Order number"
+    },
+    "eventDate": {
+        "ru": "Дата мероприятия",
+        "ro": "Data evenimentului",
+        "en": "Event date"
+    },
+    "price": {
+        "ru": "Цена",
+        "ro": "Preț",
+        "en": "Price"
+    },
+    "openQrCode": {
+        "ru": "Открыть qr-код",
+        "ro": "Deschideți codul QR",
+        "en": "Open QR Code"
+    },
+    "orderQrCode": {
+        "ru": "Qr-код заказа",
+        "ro": "QR codul de comandă",
+        "en": "QR order code"
+    },
+    "login": {
+        "ru": "Авторизоваться",
+        "ro": "Autentificare",
+        "en": "Login"
+    },
+    "noAccountQuestion": {
+        "ru": "У вас нет учетной записи?",
+        "ro": "Nu aveți un cont?",
+        "en": "You do not have an account?"
+    },
+    "register": {
+        "ru": "Зарегистрироваться",
+        "ro": "Înregistrează-te",
+        "en": "Register"
+    },
+    "existsAccountQuestion": {
+        "ru": "У вас есть учетная запись?",
+        "ro": "Aveți un cont?",
+        "en": "Do you have an account?"
+    },
+    "registerConfirmDocsPart1": {
+        "ru": "Создавая учетную запись, вы соглашаетесь с условиями",
+        "ro": "Prin crearea unui cont, sunteți de acord cu termenii",
+        "en": "By creating an account, you agree to the terms of the"
+    },
+    "orderConfirmDocsPart1": {
+        "ru": "Делая заказ, вы соглашаетесь с условиями",
+        "ro": "Prin plasarea unei comenzi, sunteți de acord cu termenii",
+        "en": "By placing an order, you agree to the terms"
+    },
+    "confirmDocsPart2": {
+        "ru": "Пользовательского соглашения и Политикой конфиденциальности",
+        "ro": "Acordului de utilizare și cu Politica de confidențialitate",
+        "en": "User Agreement and Privacy Policy"
+    },
+    "docsMsg": {
+        "ru": "Пользовательское соглашение и Политика конфиденциальности",
+        "ro": "Acordul utilizatorului și politica de confidențialitate",
+        "en": "User Agreement and Privacy Policy"
+    },
+    "send": {
+        "ru": "Отправить",
+        "ro": "Trimite",
+        "en": "Send"
+    },
+    "forgotPasswordStep1Instruction": {
+        "ru": "На вашу почту будут отправлены инструкции для продолжения восстановления пароля.",
+        "ro": "Instrucțiunile pentru a continua recuperarea parolei vor fi trimise pe e-mail.",
+        "en": "Instructions for proceeding with password recovery will be sent to your email."
+    },
+    "iForgotMyPassword": {
+        "ru": "Я забыл свой пароль",
+        "ro": "Mi-am uitat parola",
+        "en": "I forgot my password"
+    },
+    "aboutUs": {
+        "ru": "О театре",
+        "ro": "Despre Teatru",
+        "en": "About the Theater"
+    },
+    "sponsors": {
+        "ru": "Спонсоры",
+        "ro": "Sponsori",
+        "en": "Sponsors"
+    },
+    "home": {
+        "ru": "Главная",
+        "ro": "Principală",
+        "en": "Home"
+    },
+    "troupe": {
+        "ru": "Труппа",
+        "ro": "Trupa",
+        "en": "Troupe"
+    },
+    "donate": {
+        "ru": "Пожертвовать",
+        "ro": "Doneaza",
+        "en": "Donate"
+    },
+    "troupeTitle": {
+        "ru": "Труппа Национального театра Василе Александри",
+        "ro": "Trupa Teatrului Național Vasile Alecsandri",
+        "en": "Troupe of the Vasile Alecsandri National Theater"
+    },
+    "birthDate": {
+        "ru": "Дата рождения",
+        "ro": "Data de naștere",
+        "en": "Birth date"
+    },
+    "status": {
+        "ro": "Status",
+        "ru": "Статус",
+        "en": "Status"
+    },
+    "buy": {
+        "ro": "Cumparat",
+        "ru": "Куплено",
+        "en": "Purchased"
+    },
+    "reserved": {
+        "en": "Reserved",
+        "ru": "Зарезервировано",
+        "ro": "Rezervat"
+    }
+}

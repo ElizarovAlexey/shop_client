@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
     constructor(private cartService: DataCartService, private router: Router) { }
 
-    cartItems: Cart[] | any = [];
+    cartItems: Cart[] = [];
     totalPrice: number = 0;
     domain: string = 'http://127.0.0.1:5000/';
 
@@ -53,9 +53,6 @@ export class CartComponent implements OnInit {
             return;
         }
 
-        console.log('1');
-
-
         let body = {
             'email': this.orderForm.controls.email.value,
             'name': this.orderForm.controls.name.value,
@@ -63,7 +60,8 @@ export class CartComponent implements OnInit {
             'city': this.orderForm.controls.city.value,
             'commentary': this.orderForm.controls.commentary.value,
             'total_price': this.totalPrice,
-            'items': this.cartItems
+            'items': this.cartItems,
+            'date': new Date()
         };
 
         this.cartService.sendOrder(body).subscribe(data => {

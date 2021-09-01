@@ -1,0 +1,11 @@
+<ng-container *ngIf="control.errors && control.touched && showFirstOnly && objectKeys(control.errors).length">
+    <span class="error">
+        {{getErrorText(objectKeys(control.errors)[0])}}
+    </span>
+
+</ng-container>
+<ng-container *ngIf="control.errors && control.touched && !showFirstOnly">
+    <span *ngFor="let error of objectKeys(control.errors)" class="error">
+        {{getErrorText(error)}}
+    </span>
+</ng-container>

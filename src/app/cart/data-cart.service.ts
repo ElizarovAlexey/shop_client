@@ -33,6 +33,6 @@ export class DataCartService {
     }
 
     sendOrder(body: any) {
-        return this.http.post(`${this.domain}/order`, body);
+        return this.http.post(`${this.domain}/orders`, body);
     }
 }

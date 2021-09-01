@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactsComponent } from './contacts/contacts.component';
+import { RegisterComponent } from './register/register.component';
+import { ValidationErrorShowModule } from './validation-error-show/validation-error-show.module';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { ContactsComponent } from './contacts/contacts.component';
         CategoriesComponent,
         ProductComponent,
         CartComponent,
-        ContactsComponent
+        ContactsComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule,
@@ -43,7 +46,8 @@ import { ContactsComponent } from './contacts/contacts.component';
         AccordionModule,
         BrowserAnimationsModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ValidationErrorShowModule
     ],
     providers: [GetProductsService],
     bootstrap: [AppComponent]

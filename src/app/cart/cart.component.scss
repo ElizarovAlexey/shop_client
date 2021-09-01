@@ -196,7 +196,7 @@
 }
 
 .error_page {
-    height: 70vh;
+    min-height: calc(100vh - 180px);
 
     & p {
         text-align: center;
