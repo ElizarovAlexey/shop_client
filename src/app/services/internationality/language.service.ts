@@ -22,7 +22,7 @@ export type translateArgs = { key: dictionaryKey, replaceValues?: Array<string |
 export class LanguageService {
 
     readonly dictionary = dictionary;
-    readonly languages = ['ro', 'ru', 'en'];  // меняя [0], поменять и в app-routing.module
+    readonly languages = ['ru', 'ro', 'en'];  // меняя [0], поменять и в app-routing.module
 
     activeLang: string;
 

@@ -5,7 +5,7 @@
 
     <div class="categories__list">
         <p (click)="selectAll()" class="categiroes__list-text">
-            Все
+            {{ langS.translate("all") }}
         </p>
         <div *ngFor="let category of categories" class="categiroes__list-item">
             <p (click)="selectCategory(category)" class="categiroes__list-text">

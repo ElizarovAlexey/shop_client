@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LanguageService } from '../services/internationality/language.service';
 import { Cart, DataCartService } from './data-cart.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { Cart, DataCartService } from './data-cart.service';
 })
 export class CartComponent implements OnInit {
 
-    constructor(private cartService: DataCartService, private router: Router) { }
+    constructor(public langS: LanguageService, private cartService: DataCartService, private router: Router) { }
 
     cartItems: Cart[] = [];
     totalPrice: number = 0;

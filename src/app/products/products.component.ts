@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from '../services/internationality/language.service';
 import { GetProductsService } from './data-products.service';
 
 interface Product {
@@ -15,7 +16,7 @@ interface Product {
 })
 export class ProductsComponent implements OnInit {
 
-    constructor(private getProductsService: GetProductsService) { }
+    constructor(public langS: LanguageService, private getProductsService: GetProductsService) { }
 
     products: Product[];
 

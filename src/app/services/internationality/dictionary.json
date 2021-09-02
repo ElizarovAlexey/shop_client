@@ -169,6 +169,11 @@
         "ro": "Parola nouă",
         "en": "New password"
     },
+    "confirmPassword": {
+        "ru": "Повторите пароль",
+        "ro": "Repetati parola",
+        "en": "Repeat the password"
+    },
     "password": {
         "ru": "Пароль",
         "ro": "Parola",
@@ -271,7 +276,7 @@
     },
     "all": {
         "ru": "Все",
-        "ro": "Tot",
+        "ro": "Toate",
         "en": "All"
     },
     "from": {
@@ -399,16 +404,6 @@
         "ro": "Preț",
         "en": "Price"
     },
-    "openQrCode": {
-        "ru": "Открыть qr-код",
-        "ro": "Deschideți codul QR",
-        "en": "Open QR Code"
-    },
-    "orderQrCode": {
-        "ru": "Qr-код заказа",
-        "ro": "QR codul de comandă",
-        "en": "QR order code"
-    },
     "login": {
         "ru": "Авторизоваться",
         "ro": "Autentificare",
@@ -513,5 +508,155 @@
         "en": "Reserved",
         "ru": "Зарезервировано",
         "ro": "Rezervat"
+    },
+    "username": {
+        "ru": "Логин",
+        "ro": "Login",
+        "en": "Login"
+    },
+    "isRegisteredAnswer": {
+        "ru": "У вас уже есть аккаунт?",
+        "ro": "Aveți deja un cont?",
+        "en": "Do you already have an account?"
+    },
+    "isNotRegisteredAnswer": {
+        "ru": "Нет аккаунта?",
+        "ro": "Nu aveți cont?",
+        "en": "No account?"
+    },
+    "createAccount": {
+        "ru": "Создайте аккаунт",
+        "ro": "Creați un cont",
+        "en": "Create an account"
+    },
+    "loginAccount": {
+        "ru": "Войти в систему",
+        "ro": "Conectați-vă la sistem",
+        "en": "Log in to the system"
+    },
+    "placeOrder": {
+        "ru": "Оформить заказ",
+        "ro": "Plasați o comandă",
+        "en": "Place an order"
+    },
+    "address": {
+        "ru": "Адрес",
+        "ro": "Adresa",
+        "en": "Address"
+    },
+    "fullAddress": {
+        "ru": "Страна, город, улица, дом (квартира)",
+        "ro": "Țară, oraș, stradă, casă (apartament)",
+        "en": "Country, city, street, house (apartment)"
+    },
+    "productsCost": {
+        "ru": "Стоимость товаров",
+        "ro": "Costul bunurilor",
+        "en": "The cost of products"
+    },
+    "inCart": {
+        "ru": "В корзине",
+        "ro": "În coș",
+        "en": "In cart"
+    },
+    "products": {
+        "ru": "товаров",
+        "ro": "bunurilor",
+        "en": "products"
+    },
+    "size": {
+        "ru": "Размер",
+        "ro": "Dimensiune",
+        "en": "Size"
+    },
+    "visitSocials": {
+        "ru": "Посетите наши странички в",
+        "ro": "Vizitați paginile noastre în",
+        "en": "Visit our pages in"
+    },
+    "shopAddress": {
+        "ru": "Бельцы, ул. Буребиста 17",
+        "ro": "Balti, str. Burebista 17",
+        "en": "Balti, 17 Burebista street"
+    },
+    "brightSneakers": {
+        "ru": "Яркие кроссовки",
+        "ro": "Adidași strălucitori",
+        "en": "Bright Sneakers"
+    },
+    "stylishSneakers": {
+        "ru": "Стильные кроссовки",
+        "ro": "Adidași eleganți",
+        "en": "Stylish sneakers"
+    },
+    "trendSneakers": {
+        "ru": "Кроссовки в тренде",
+        "ro": "Adidașii în tendință",
+        "en": "Sneakers are on trend"
+    },
+    "makeChoice": {
+        "ru": "Сделать выбор",
+        "ro": "Faceți o alegere",
+        "en": "Make a choice"
+    },
+    "seasonHit": {
+        "ru": "ХитСезона",
+        "ro": "Hit al sezonului",
+        "en": "Hit of the season"
+    },
+    "shoes": {
+        "ru": "Товары",
+        "ro": "Pantofi",
+        "en": "Shoes"
+    },
+    "articol": {
+        "ru": "Артикол",
+        "ro": "Articol",
+        "en": "Articol"
+    },
+    "inStock": {
+        "ru": "Артикол",
+        "ro": "În stoc",
+        "en": "In stock"
+    },
+    "chooseSize": {
+        "ru": "Выберите размер",
+        "ro": "Alegeți o dimensiune",
+        "en": "Choose a size"
+    },
+    "changeCount": {
+        "ru": "Изменить количество",
+        "ro": "Modificați cantitatea",
+        "en": "Change a count"
+    },
+    "addInCart": {
+        "ru": "Добавить в корзину",
+        "ro": "Adaugă în coș",
+        "en": "Add in cart"
+    },
+    "specifications": {
+        "ru": "Характеристики",
+        "ro": "Specificații",
+        "en": "Specifications"
+    },
+    "delivery": {
+        "ru": "Доставка",
+        "ro": "Livrare",
+        "en": "Delivery"
+    },
+    "payment": {
+        "ru": "Оплата",
+        "ro": "Plata",
+        "en": "Payment"
+    },
+    "emptyBasket": {
+        "ru": "Корзина пуста",
+        "ro": "Coșul este gol",
+        "en": "The basket is empty"
+    },
+    "allSneakers": {
+        "ru": "Все кроссовки",
+        "ro": "Toate pantofi",
+        "en": "All sneakers"
     }
 }

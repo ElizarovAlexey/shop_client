@@ -1,40 +1,41 @@
 <div class="register">
     <div class="container">
         <p class="register__label">
-            Создайте аккаунт
+            {{ langS.translate("createAccount") }}
         </p>
         <form [formGroup]="registerForm" action="/register" (ngSubmit)="registerAccount()" class="register__form">
-            <label for="register__form-login">Логин</label>
+            <label for="register__form-login">{{ langS.translate("username") }}</label>
             <app-validation-error-show [control]="registerForm.controls.login"></app-validation-error-show>
             <input [ngClass]="{'invalid': registerForm.controls.login.errors && registerForm.controls.login.touched}"
                 formControlName="login" class="register__form-input" id="register__form-login" type="text"
-                placeholder="Login">
+                placeholder="{{ langS.translate('username') }}">
 
-            <label for="register__form-email">Email</label>
+            <label for="register__form-email">{{ langS.translate("email") }}</label>
             <app-validation-error-show [control]="registerForm.controls.email"></app-validation-error-show>
             <input [ngClass]="{'invalid': registerForm.controls.email.errors && registerForm.controls.email.touched}"
                 formControlName="email" class="register__form-input" id="register__form-email" type="email"
                 placeholder="sneakers@gmail.com">
 
-            <label for="register__form-password">Пароль</label>
+            <label for="register__form-password">{{ langS.translate("password") }}</label>
             <app-validation-error-show [control]="registerForm.controls.password"></app-validation-error-show>
             <input
                 [ngClass]="{'invalid': registerForm.controls.password.errors && registerForm.controls.password.touched}"
                 formControlName="password" class="register__form-input" id="register__form-password" type="password"
                 placeholder="********">
 
-            <label for="register__form-password">Повторите пароль</label>
+            <label for="register__form-password">{{ langS.translate("confirmPassword") }}</label>
             <app-validation-error-show [control]="registerForm.controls.confirmPassword"></app-validation-error-show>
             <input
                 [ngClass]="{'invalid': registerForm.controls.confirmPassword.errors && registerForm.controls.confirmPassword.touched}"
                 formControlName="confirmPassword" class="register__form-input" id="register__form-confirmPassword"
                 type="password" placeholder="********">
             <button type="submit" class="register__form--button">
-                Регистрация
+                {{ langS.translate("register") }}
             </button>
         </form>
         <p class="register__answer">
-            У вас уже есть аккаунт? <a>Войти</a>
+            {{ langS.translate("isRegisteredAnswer") }} <a routerLink="/{{ langS.activeLang }}/login">{{
+                langS.translate("signIn") }}</a>
         </p>
     </div>
 </div>

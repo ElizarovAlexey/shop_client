@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="container">
+        <p class="login__label">
+            {{ langS.translate("loginAccount") }}
+        </p>
+        <form [formGroup]="loginForm" action="/login" (ngSubmit)="loginAccount()" class="login__form">
+            <label for="login__form-login">{{ langS.translate("username") }}</label>
+            <app-validation-error-show [control]="loginForm.controls.login"></app-validation-error-show>
+            <input [ngClass]="{'invalid': loginForm.controls.login.errors && loginForm.controls.login.touched}"
+                formControlName="login" class="login__form-input" id="login__form-login" type="text"
+                placeholder="{{ langS.translate('username') }}">
+
+            <label for="login__form-password">{{ langS.translate("password") }}</label>
+            <app-validation-error-show [control]="loginForm.controls.password"></app-validation-error-show>
+            <input [ngClass]="{'invalid': loginForm.controls.password.errors && loginForm.controls.password.touched}"
+                formControlName="password" class="login__form-input" id="login__form-password" type="password"
+                placeholder="********">
+
+            <button type="submit" class="login__form--button">
+                {{ langS.translate("login") }}
+            </button>
+
+            <p class="login__answer">
+                {{ langS.translate("isNotRegisteredAnswer") }} <a routerLink="/{{ langS.activeLang }}/register">{{
+                    langS.translate("register") }}</a>
+            </p>
+        </form>
+    </div>
+</div>

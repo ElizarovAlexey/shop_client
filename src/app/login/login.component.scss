@@ -1,4 +1,4 @@
-.register {
+.login {
     min-height: 100vh;
 
     &__label {
@@ -19,7 +19,7 @@
     }
 }
 
-.register__form {
+.login__form {
     display: block;
     width: 600px;
     margin: 0 auto;

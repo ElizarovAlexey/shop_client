@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
         confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(255)]),
     });
 
-    constructor(private langS: LanguageService, private registerS: RegisterService, private router: Router) { }
+    constructor(public langS: LanguageService, private registerS: RegisterService, private router: Router) { }
 
     ngOnInit(): void { }
 
@@ -37,10 +37,8 @@ export class RegisterComponent implements OnInit {
         }
 
         this.registerS.postRegister(body).subscribe((data: any) => {
-            console.log(data);
-
-            if (data.status == 201) {
-                this.router.navigate(['/ru/']);
+            if (data.status_code == 201) {
+                this.router.navigate([`/${this.langS.activeLang}`]);
             }
         });
     }

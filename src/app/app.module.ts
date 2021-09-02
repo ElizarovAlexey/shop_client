@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactsComponent } from './contacts/contacts.component';
 import { RegisterComponent } from './register/register.component';
 import { ValidationErrorShowModule } from './validation-error-show/validation-error-show.module';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ValidationErrorShowModule } from './validation-error-show/validation-er
         ProductComponent,
         CartComponent,
         ContactsComponent,
-        RegisterComponent
+        RegisterComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

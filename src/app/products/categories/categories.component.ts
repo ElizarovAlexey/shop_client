@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LanguageService } from 'src/app/services/internationality/language.service';
 import { DataCategoriesService } from './data-categories.service';
 
 interface Category {
@@ -15,10 +16,10 @@ export class CategoriesComponent implements OnInit {
 
     @Output() onChangeCategory: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private categoriesServise: DataCategoriesService) { }
+    constructor(public langS: LanguageService, private categoriesServise: DataCategoriesService) { }
 
     categories: Category[];
-    categorySelected: string = 'Все кроссовки';
+    categorySelected: string = this.langS.translate("allSneakers");
 
     selectCategory(category: any) {
         this.categorySelected = category.name;
@@ -27,7 +28,7 @@ export class CategoriesComponent implements OnInit {
 
     selectAll() {
         this.onChangeCategory.emit(0);
-        this.categorySelected = 'Все кроссовки';
+        this.categorySelected = this.langS.translate("allSneakers");
     }
 
     ngOnInit(): void {

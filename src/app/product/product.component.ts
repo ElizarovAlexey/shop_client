@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LanguageService } from '../services/internationality/language.service';
 import { DataProductService } from './data-product.service';
 import { Product } from './data-product.service'
 
@@ -12,7 +13,8 @@ export class ProductComponent implements OnInit {
 
     constructor(private activatedRoute: ActivatedRoute,
         private router: Router,
-        private productService: DataProductService) { }
+        private productService: DataProductService,
+        public langS: LanguageService) { }
 
     uuid: string = '';
     product: Product | any;

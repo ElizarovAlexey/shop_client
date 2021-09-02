@@ -1,5 +1,5 @@
 <div *ngIf="cartItems == null" class="error_page">
-    <p>Корзина пуста</p>
+    <p>{{ langS.translate('emptyBasket') }}</p>
     <img src="../../assets/cart_404.png" alt="">
 </div>
 
@@ -7,50 +7,50 @@
     <div class="container">
         <div class="cart__info">
             <div class="cart__info-label">
-                Оформите заказ
+                {{ langS.translate("placeOrder") }}
             </div>
 
             <form [formGroup]="orderForm" action="/order" (ngSubmit)="submitOrder()" class="cart__form">
-                <label for="cart__form-email">Email</label>
+                <label for="cart__form-email">{{ langS.translate("email") }}</label>
                 <input [ngClass]="{'invalid': orderForm.controls.email.errors && orderForm.controls.email.touched}"
                     formControlName="email" class="cart__form-input" id="cart__form-email" type="email"
                     placeholder="sneakers@gmail.com">
 
-                <label for="cart__form-name">Ф.И.О</label>
+                <label for="cart__form-name">{{ langS.translate("name") }}</label>
                 <input [ngClass]="{'invalid': orderForm.controls.name.errors && orderForm.controls.name.touched}"
                     formControlName="name" class="cart__form-input" id="cart__form-name" type="text"
-                    placeholder="Иванов Иван Иванович">
+                    placeholder="{{ langS.translate('name') }}">
 
-                <label for="cart__form-phone">Телефон</label>
+                <label for="cart__form-phone">{{ langS.translate("phone") }}</label>
                 <input [ngClass]="{'invalid': orderForm.controls.phone.errors && orderForm.controls.phone.touched}"
                     formControlName="phone" class="cart__form-input" id="cart__form-phone" type="tel"
                     placeholder="+373 686 123 12">
 
-                <label for="cart__form-city">Город</label>
+                <label for="cart__form-city">{{ langS.translate("address") }}</label>
                 <input [ngClass]="{'invalid': orderForm.controls.city.errors && orderForm.controls.city.touched}"
                     formControlName="city" class="cart__form-input" id="cart__form-city" type="tel"
-                    placeholder="г. Бельцы">
+                    placeholder="{{ langS.translate('fullAddress') }}">
 
-                <label for="cart__form-commentary">Комментарий к заказу</label>
+                <label for="cart__form-commentary">{{ langS.translate("comment") }}</label>
                 <textarea formControlName="commentary" id="cart__form-commentary" class="cart__form-commentary"
-                    cols="30" rows="10" placeholder="Комментарий к заказу"></textarea>
+                    cols="30" rows="10" placeholder="{{ langS.translate('comment') }}"></textarea>
 
                 <button type="submit" class="cart__form--button">
-                    Оформить заказ
+                    {{ langS.translate("placeOrder") }}
                 </button>
             </form>
         </div>
 
         <div class="cart__wrapper">
             <div class="cart__wrapper-label">
-                В корзине {{ cartItems.length }} товара
+                {{ langS.translate("inCart") }} {{ cartItems.length }} {{ langS.translate("products") }}
             </div>
 
             <hr class="cart__separator">
 
             <div class="cart__cost">
                 <div class="cart__cost-items">
-                    <p>Стоимость товаров</p>
+                    <p>{{ langS.translate("productsCost") }}</p>
                     <p>{{ totalPrice | currency: '&#8381; ': 'code' }}</p>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="cart__info-wrapper">
                             <div class="cart__item-size">
-                                Размер {{ item.product_size}}
+                                {{ langS.translate("size") }} {{ item.product_size}}
                             </div>
                             <div class="cart__count">
                                 <div class="cart__btn cart__count--btn" (click)="handleProductsCount(item, 'minus')">

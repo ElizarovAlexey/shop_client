@@ -3,23 +3,26 @@
         <div class="nav__list">
             <div class="nav__list-left">
                 <div class="nav__list-item">
-                    <img routerLink="/" routerLinkActive="active home" [routerLinkActiveOptions]="{exact: true}"
-                        class="nav__logo" src="../../assets/logo.png" alt="logo">
+                    <img routerLink="/{{ langS.activeLang }}" routerLinkActive="active home"
+                        [routerLinkActiveOptions]="{exact: true}" class="nav__logo" src="../../assets/logo.png"
+                        alt="logo">
                 </div>
                 <div class="nav__list-item">
-                    <a routerLink="/" routerLinkActive="active home" class="nav__list-link"
+                    <a routerLink="/{{ langS.activeLang }}" routerLinkActive="active home" class="nav__list-link"
                         [routerLinkActiveOptions]="{exact: true}">
-                        Главная
+                        {{ langS.translate('home') }}
                     </a>
                 </div>
                 <div class="nav__list-item">
-                    <a routerLink="/products" routerLinkActive="active products" class="nav__list-link">
-                        Товары
+                    <a routerLink="/{{ langS.activeLang }}/products" routerLinkActive="active products"
+                        class="nav__list-link">
+                        {{ langS.translate('shoes') }}
                     </a>
                 </div>
                 <div class="nav__list-item">
-                    <a routerLink="/contacts" routerLinkActive="active contacts" class="nav__list-link">
-                        Контакты
+                    <a routerLink="/{{ langS.activeLang }}/contacts" routerLinkActive="active contacts"
+                        class="nav__list-link">
+                        {{ langS.translate('contacts') }}
                     </a>
                 </div>
             </div>
@@ -28,8 +31,14 @@
                     <img class="nav__search-image" src="../../assets/icon-search.png" alt="search">
                 </div>
                 <div class="nav__list-item">
-                    <img class="nav__cart-image" routerLink="/cart" src="../../assets/icon-cart.png" alt="cart">
+                    <img class="nav__cart-image" routerLink="/{{ langS.activeLang }}/cart"
+                        src="../../assets/icon-cart.png" alt="cart">
                 </div>
+                <a routerLink="/{{ langS.activeLang }}/login" class="nav__login-btn">
+                    Войти
+                </a>
+                <p-dropdown class="nav__list-languages" (onChange)="changeLanguage($event)" [options]="langS.languages">
+                </p-dropdown>
             </div>
         </div>
     </div>

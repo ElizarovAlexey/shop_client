@@ -1,14 +1,14 @@
 <div class="contacts">
     <div class="container">
         <div class="contacts__title">
-            Контакты
+            {{ langS.translate("contacts") }}
         </div>
         <div class="contacts__company">
             «Krossovki Group» SRL
         </div>
         <div class="contacts__phone">
             <span class="contacts__phone-text contacts__text--strong">
-                Контактный телефон:
+                {{ langS.translate('phone') + ':' }}
             </span>
             <span class="contacts__phone-text">
                 +373 686 12 123
@@ -16,16 +16,16 @@
         </div>
         <div class="contacts__address">
             <span class="contacts__address-text contacts__text--strong">
-                Адрес магазина:
+                {{ langS.translate('address') + ':' }}
             </span>
             <span class="contacts__address-text">
-                Ул. Буребиста 17
+                {{ langS.translate('shopAddress') + ':' }}
             </span>
         </div>
 
         <div class="contacts__email">
             <span class="conctacts__email-text contacts__text--strong">
-                E-mail магазина:
+                {{ langS.translate('email') + ':' }}
             </span>
             <span class="conctacts__email-text">
                 sneakers@gmail.com
@@ -33,11 +33,10 @@
         </div>
 
         <div class="contacts__socials">
-            <span class="contacts__socials-text">Посетите наши странички в </span>
+            <span class="contacts__socials-text">{{ langS.translate('visitSocials') + ':' }} </span>
             <a class="contacts__socials-link" href="https://facebook.com" target="_blank">
                 <img class="contacts__socials-image" src="../../assets/icons-facebook.png" alt="facebook social">
             </a>
-            <span class="contacts__socials-text"> и </span>
             <a class="contacts__socials-link" href="https://instagram.com" target="_blank">
                 <img class="contacts__socials-image" src="../../assets/icons-instagram.png" alt="instagram social">
             </a>

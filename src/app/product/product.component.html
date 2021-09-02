@@ -8,7 +8,7 @@
                 {{ product.title }}
             </div>
             <div class="product__articol">
-                Артикол: {{ product.uuid }}
+                {{ langS.translate('articol') + ':' }} {{ product.uuid }}
             </div>
             <div class="product__price">
                 {{ product.price | currency: '&#8381; ':'code' }}
@@ -16,19 +16,19 @@
             <div class="product__stock">
                 <img class="product__stock--image" src="../../assets/icon-ok.png" alt="in_stock">
                 <p class="product__stock--text">
-                    В наличии
+                    {{ langS.translate('inStock') }}
                 </p>
             </div>
             <div class="product__sizes">
                 <p class="product__sizes--text">
-                    Выберите размер:
+                    {{ langS.translate('chooseSize') + ':' }}
                 </p>
                 <p-selectButton class="product__selectSizes" [options]="product.sizes" [(ngModel)]="selectedSize"
                     optionLabel="value" optionValue="value"></p-selectButton>
             </div>
 
             <p class="product__count--text">
-                Изменить количество:
+                {{ langS.translate('changeCount') + ':' }}
             </p>
             <div class="product__count">
                 <div class="product__btn product__count--btn" (click)="handleProductsCount('minus')">
@@ -43,13 +43,13 @@
             </div>
 
             <div class="product__cart--btn product__btn" (click)="sendToCart()">
-                Добавить в корзину
+                {{ langS.translate('addInCart') }}
             </div>
 
             <hr class="product__separator">
 
             <p-accordion class="product__accordion">
-                <p-accordionTab header="Характеристики">
+                <p-accordionTab [header]="langS.translate('specifications')">
                     <p class="product__accordion--paragraph">
                         <span>Пол:</span> Мужское
                     </p>
@@ -66,7 +66,7 @@
                         <span>Состав:</span> Кожа, текстиль, резинаки
                     </p>
                 </p-accordionTab>
-                <p-accordionTab header="Доставка">
+                <p-accordionTab [header]="langS.translate('delivery')">
                     <p class="product__accordion--paragraph">
                         <span>Доставка по Москве:</span>
                     </p>
@@ -99,7 +99,7 @@
                         </li>
                     </ul>
                 </p-accordionTab>
-                <p-accordionTab header="Оплата">
+                <p-accordionTab [header]="langS.translate('payment')">
                     <p class="product__accordion--paragraph">
                         <span>Доступные способы оплаты:</span>
                     </p>
