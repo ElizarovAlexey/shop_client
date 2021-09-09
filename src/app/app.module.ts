@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './home/intro/intro.component';
 import { FooterComponent } from './footer/footer.component';
-import { GetProductsService } from './products/data-products.service';
 import { CategoriesComponent } from './products/categories/categories.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProductComponent } from './product/product.component';
@@ -22,6 +21,13 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { RegisterComponent } from './register/register.component';
 import { ValidationErrorShowModule } from './validation-error-show/validation-error-show.module';
 import { LoginComponent } from './login/login.component';
+import { AppInterceptor } from './interceptors/app.interceptor';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { AccountComponent } from './account/account.component';
+
 
 
 @NgModule({
@@ -37,7 +43,8 @@ import { LoginComponent } from './login/login.component';
         CartComponent,
         ContactsComponent,
         RegisterComponent,
-        LoginComponent
+        LoginComponent,
+        AccountComponent,
     ],
     imports: [
         BrowserModule,
@@ -49,9 +56,19 @@ import { LoginComponent } from './login/login.component';
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        ValidationErrorShowModule
+        ValidationErrorShowModule,
+        MessageModule,
+        MessagesModule,
+        ToastModule
     ],
-    providers: [GetProductsService],
+    providers: [
+        MessageService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AppInterceptor,
+            multi: true
+        },
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

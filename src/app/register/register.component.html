@@ -24,10 +24,10 @@
                 placeholder="********">
 
             <label for="register__form-password">{{ langS.translate("confirmPassword") }}</label>
-            <app-validation-error-show [control]="registerForm.controls.confirmPassword"></app-validation-error-show>
+            <app-validation-error-show [control]="registerForm.controls.passwordConfirm"></app-validation-error-show>
             <input
-                [ngClass]="{'invalid': registerForm.controls.confirmPassword.errors && registerForm.controls.confirmPassword.touched}"
-                formControlName="confirmPassword" class="register__form-input" id="register__form-confirmPassword"
+                [ngClass]="{'invalid': registerForm.controls.passwordConfirm.errors && registerForm.controls.passwordConfirm.touched}"
+                formControlName="passwordConfirm" class="register__form-input" id="register__form-confirmPassword"
                 type="password" placeholder="********">
             <button type="submit" class="register__form--button">
                 {{ langS.translate("register") }}

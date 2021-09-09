@@ -29,7 +29,7 @@ export function passwordConfirmValidatorPartPassword(passwordConfirm: FormContro
     return null;
 }
 
-export function nameValidatorpasswordConfirmValidatorPartPasswordConfirm(password: FormControl, passwordConfirm: FormControl) {
+export function passwordConfirmValidatorPartPasswordConfirm(password: FormControl, passwordConfirm: FormControl) {
     if (password.value !== passwordConfirm.value) return { 'passwordConfirmError': true };
     return null;
 }

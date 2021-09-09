@@ -34,10 +34,17 @@
                     <img class="nav__cart-image" routerLink="/{{ langS.activeLang }}/cart"
                         src="../../assets/icon-cart.png" alt="cart">
                 </div>
-                <a routerLink="/{{ langS.activeLang }}/login" class="nav__login-btn">
-                    Войти
+                <a *ngIf="!userS.isLogin" routerLink="/{{ langS.activeLang }}/login" class="nav__login-btn">
+                    {{ langS.translate('signIn') }}
                 </a>
-                <p-dropdown class="nav__list-languages" (onChange)="changeLanguage($event)" [options]="langS.languages">
+                <div *ngIf="userS.isLogin" routerLink="/{{ langS.activeLang }}/account" class="nav__login-user">
+                    <img class="nav__login-userIcon" src="../../assets/user-icon.png" alt="user">
+                    <!-- <p class="nav__login-username">
+                        {{ userS.user.username }}
+                    </p> -->
+                </div>
+                <p-dropdown class="nav__list-languages" [(ngModel)]="selectedLang" (onChange)="changeLanguage($event)"
+                    [options]="langS.languages">
                 </p-dropdown>
             </div>
         </div>

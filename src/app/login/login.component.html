@@ -5,16 +5,21 @@
         </p>
         <form [formGroup]="loginForm" action="/login" (ngSubmit)="loginAccount()" class="login__form">
             <label for="login__form-login">{{ langS.translate("username") }}</label>
-            <app-validation-error-show [control]="loginForm.controls.login"></app-validation-error-show>
-            <input [ngClass]="{'invalid': loginForm.controls.login.errors && loginForm.controls.login.touched}"
-                formControlName="login" class="login__form-input" id="login__form-login" type="text"
+            <app-validation-error-show [control]="loginForm.controls.username"></app-validation-error-show>
+            <input
+                [ngClass]="{'invalid': loginForm.controls.username.errors && loginForm.controls.username.touched || loginForm.errors}"
+                formControlName="username" class="login__form-input" id="login__form-login" type="text"
                 placeholder="{{ langS.translate('username') }}">
 
             <label for="login__form-password">{{ langS.translate("password") }}</label>
             <app-validation-error-show [control]="loginForm.controls.password"></app-validation-error-show>
-            <input [ngClass]="{'invalid': loginForm.controls.password.errors && loginForm.controls.password.touched}"
+            <input
+                [ngClass]="{'invalid': loginForm.controls.password.errors && loginForm.controls.password.touched || loginForm.errors}"
                 formControlName="password" class="login__form-input" id="login__form-password" type="password"
                 placeholder="********">
+
+            <app-validation-error-show [control]="loginForm" class="login__validator-unauthorized">
+            </app-validation-error-show>
 
             <button type="submit" class="login__form--button">
                 {{ langS.translate("login") }}
@@ -27,3 +32,4 @@
         </form>
     </div>
 </div>
+<!-- invalidEmailOrPasswordError -->

@@ -1,9 +1,9 @@
-<div *ngIf="cartItems == null" class="error_page">
+<div *ngIf="cartItems == []" class="error_page">
     <p>{{ langS.translate('emptyBasket') }}</p>
     <img src="../../assets/cart_404.png" alt="">
 </div>
 
-<div *ngIf="cartItems != null" class="cart">
+<div *ngIf="cartItems != []" class="cart">
     <div class="container">
         <div class="cart__info">
             <div class="cart__info-label">
@@ -12,21 +12,25 @@
 
             <form [formGroup]="orderForm" action="/order" (ngSubmit)="submitOrder()" class="cart__form">
                 <label for="cart__form-email">{{ langS.translate("email") }}</label>
+                <app-validation-error-show [control]="orderForm.controls.email"></app-validation-error-show>
                 <input [ngClass]="{'invalid': orderForm.controls.email.errors && orderForm.controls.email.touched}"
                     formControlName="email" class="cart__form-input" id="cart__form-email" type="email"
                     placeholder="sneakers@gmail.com">
 
                 <label for="cart__form-name">{{ langS.translate("name") }}</label>
+                <app-validation-error-show [control]="orderForm.controls.name"></app-validation-error-show>
                 <input [ngClass]="{'invalid': orderForm.controls.name.errors && orderForm.controls.name.touched}"
                     formControlName="name" class="cart__form-input" id="cart__form-name" type="text"
                     placeholder="{{ langS.translate('name') }}">
 
                 <label for="cart__form-phone">{{ langS.translate("phone") }}</label>
+                <app-validation-error-show [control]="orderForm.controls.phone"></app-validation-error-show>
                 <input [ngClass]="{'invalid': orderForm.controls.phone.errors && orderForm.controls.phone.touched}"
                     formControlName="phone" class="cart__form-input" id="cart__form-phone" type="tel"
                     placeholder="+373 686 123 12">
 
                 <label for="cart__form-city">{{ langS.translate("address") }}</label>
+                <app-validation-error-show [control]="orderForm.controls.city"></app-validation-error-show>
                 <input [ngClass]="{'invalid': orderForm.controls.city.errors && orderForm.controls.city.touched}"
                     formControlName="city" class="cart__form-input" id="cart__form-city" type="tel"
                     placeholder="{{ langS.translate('fullAddress') }}">
@@ -59,32 +63,32 @@
                 <hr class="cart__separator">
 
                 <div class="cart__item">
-                    <img class="cart__item-image" src="{{ domain + item.product_image }}" alt="sneaker photo">
+                    <img class="cart__item-image" src="{{ domain + '/' + item.image }}" alt="sneaker photo">
                     <div class="cart__item-info">
                         <div>
                             <div class="cart__item-title">
-                                {{ item.product_title }}
+                                {{ item.title }}
                             </div>
                             <div class="cart__item-price">
-                                {{ item.product_price | currency: '&#8381; ':'code' }}
+                                {{ item.price | currency: '&#8381; ':'code' }}
                             </div>
                         </div>
                         <div class="cart__info-wrapper">
                             <div class="cart__item-size">
-                                {{ langS.translate("size") }} {{ item.product_size}}
+                                {{ langS.translate("size") }} {{ item.size }}
                             </div>
                             <div class="cart__count">
                                 <div class="cart__btn cart__count--btn" (click)="handleProductsCount(item, 'minus')">
                                     -
                                 </div>
                                 <p class="cart__count--counter">
-                                    {{ item.product_count }}
+                                    {{ item.count }}
                                 </p>
                                 <div class="cart__btn cart__count--btn" (click)="handleProductsCount(item, 'plus')">
                                     +
                                 </div>
                             </div>
-                            <div class="cart__delete" (click)="deleteCartItem(item.id)">
+                            <div class="cart__delete" (click)="deleteCartItem(item)">
                                 &#10006;
                             </div>
                         </div>

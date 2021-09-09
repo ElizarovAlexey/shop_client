@@ -1,0 +1,16 @@
+<div *ngIf="!userS.isLogin" class="account_notLogin">
+    <div class="container">
+        <div routerLink="/{{ langS.activeLang }}/login">
+            Please login for view this page
+        </div>
+    </div>
+</div>
+
+<div *ngIf="userS.isLogin" class="account">
+    <div class="container">
+        <p>{{ userS.user.username }}</p>
+        <div (click)="userS.logOut()">
+            Выйти
+        </div>
+    </div>
+</div>

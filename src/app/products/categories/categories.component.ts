@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { LanguageService } from 'src/app/services/internationality/language.service';
-import { DataCategoriesService } from './data-categories.service';
 
 interface Category {
     id: number,
@@ -16,12 +16,12 @@ export class CategoriesComponent implements OnInit {
 
     @Output() onChangeCategory: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(public langS: LanguageService, private categoriesServise: DataCategoriesService) { }
+    constructor(public langS: LanguageService, private http: HttpClient) { }
 
     categories: Category[];
     categorySelected: string = this.langS.translate("allSneakers");
 
-    selectCategory(category: any) {
+    selectCategory(category: { 'id': number, 'name': string }) {
         this.categorySelected = category.name;
         this.onChangeCategory.emit(category);
     }
@@ -33,7 +33,7 @@ export class CategoriesComponent implements OnInit {
 
     ngOnInit(): void {
         if (this.categories == null) {
-            this.categoriesServise.getCategories().subscribe((data: any) => {
+            this.http.get('/categories').subscribe((data: Array<{ 'id': number, 'name': string }>) => {
                 this.categories = data;
             })
         }
