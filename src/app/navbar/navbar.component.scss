@@ -21,7 +21,7 @@
     }
 
     &-right {
-        width: 15%;
+        width: 20%;
     }
 
     &-link {
@@ -80,10 +80,6 @@
 }
 
 .nav__list-languages::ng-deep {
-    position: fixed;
-    top: 20px;
-    right: 10px;
-
     .p-dropdown-label {
         padding: 5px;
     }
@@ -109,7 +105,7 @@
     }
 
     &-btn {
-        border-radius: 13px;
+        // border-radius: 13px;
         padding: 10px 20px;
         display: block;
         font-family: arial;
@@ -125,5 +121,61 @@
         &:active {
             box-shadow: 0px 2px 1px white inset, 0px -2px 20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
         }
+    }
+}
+
+.burger {
+    display: none;
+}
+
+.burger-active {
+    display: block;
+    width: 100%;
+    color: white;
+    background-color: #000;
+    z-index: 9999;
+}
+
+// Adaptivity
+
+@media screen and (max-width: 1050px) {
+    .nav__list {
+        &-left {
+            width: 40%;
+        }
+
+        &-right {
+            width: 35%;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .nav__list {
+        &-left {
+            display: none;
+        }
+
+        &-right {
+            width: 40%;
+        }
+
+
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .nav__list-right {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .nav__list-right {
+        width: 80%;
     }
 }

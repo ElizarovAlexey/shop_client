@@ -1,16 +1,23 @@
-<div *ngIf="!userS.isLogin" class="account_notLogin">
+<div *ngIf="!userS.isLogin">
     <div class="container">
-        <div routerLink="/{{ langS.activeLang }}/login">
-            Please login for view this page
+        <div class="not-login" routerLink="/{{ langS.activeLang }}/login">
+            <p>Please login for view this page</p>
+            <img src="../../assets/icons8-login-50.png" alt="no login">
         </div>
     </div>
 </div>
 
 <div *ngIf="userS.isLogin" class="account">
     <div class="container">
-        <p>{{ userS.user.username }}</p>
-        <div (click)="userS.logOut()">
-            Выйти
+        <div class="account__user">
+            <img src="../../assets/user.png" alt="user icon">
+            <p>
+                <span class="username__bold">Login: </span>
+                <span class="username">{{ userS.user.username }}</span>
+            </p>
+            <div class="user__logout user__btn" (click)="userS.logOut()">
+                Выйти
+            </div>
         </div>
     </div>
 </div>

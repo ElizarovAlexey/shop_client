@@ -32,11 +32,9 @@ export class UserService {
             this.http.get('/check_token').subscribe((data: User) => {
                 this.user = data;
                 this.isLogin = true;
-            }), (error: HttpErrorResponse) => {
-                console.log(error);
-
+            }, (error: HttpErrorResponse) => {
                 localStorage.removeItem('token');
-            };
+            });
         } else {
             this.isLogin = false;
             this.user = null;

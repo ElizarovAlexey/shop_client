@@ -61,3 +61,26 @@
         padding: 15px;
     }
 }
+
+// Adaptivity
+
+@media screen and (max-width: 850px) {
+    .intro__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro__card {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .intro__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .intro__card {
+        margin: 0 auto 40px auto;
+    }
+}

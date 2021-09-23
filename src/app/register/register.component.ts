@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { LanguageService } from '../services/internationality/language.service';
 import { User } from '../services/user.service';
 import { passwordConfirmValidatorPartPassword, passwordConfirmValidatorPartPasswordConfirm, trimValidator } from '../utils/formValidationUtils';
@@ -16,10 +17,15 @@ export class RegisterComponent implements OnInit {
     registerForm = new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email]),
         login: new FormControl('', [Validators.required]),
-        password: new FormControl('', []),
+        password: new FormControl('', [])
     });
 
-    constructor(public langS: LanguageService, private http: HttpClient, private router: Router) { }
+    constructor(
+        public langS: LanguageService,
+        private http: HttpClient,
+        private router: Router,
+        private messageService: MessageService
+    ) { }
 
     ngOnInit(): void {
         this.registerForm.addControl("passwordConfirm", new FormControl('', [
@@ -47,7 +53,10 @@ export class RegisterComponent implements OnInit {
 
         this.http.post('/register', body).subscribe((data: { 'error'?: string, 'user'?: User, 'status_code': number }) => {
             if (data.status_code == 201) {
-                this.router.navigate([`/${this.langS.activeLang}`]);
+                this.messageService.add({ severity: 'success', summary: this.langS.translate('successRegistration') });
+                setTimeout(() => {
+                    this.router.navigate([`/${this.langS.activeLang}`]);
+                }, 2000);
             }
         });
     }

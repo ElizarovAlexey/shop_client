@@ -45,3 +45,26 @@
         }
     }
 }
+
+// Adaptivity
+
+@media screen and (max-width: 600px) {
+    .footer__blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__block {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer__blocks {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__block {
+        text-align: justify;
+    }
+}

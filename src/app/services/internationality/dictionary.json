@@ -64,6 +64,11 @@
         "ro": "Succes",
         "en": "Success"
     },
+    "successRegistration": {
+        "ru": "Успешная регистрация",
+        "ro": "Înregistrare reușită",
+        "en": "Success registration"
+    },
     "registerStep1Msg": {
         "ru": "На вашу почту было отправлено письмо. Для завершения регистрации перейдите по ссылке, содержащейся в письме.",
         "ro": "V-a fost trimisă o scrisoare prin e-mail. Pentru a finaliza înregistrarea, urmați linkul din scrisoare.",

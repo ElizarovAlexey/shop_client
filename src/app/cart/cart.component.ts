@@ -56,6 +56,11 @@ export class CartComponent implements OnInit {
         commentary: new FormControl('', [])
     });
 
+    ngOnInit(): void {
+        window.scroll(0, 0);
+        this.getCartItems();
+    }
+
     getCartItems() {
         let user = this.userS.user;
         this.products = this.products;
@@ -210,9 +215,5 @@ export class CartComponent implements OnInit {
             localStorage.setItem('products', JSON.stringify(storage));
             this.getCartItems();
         }
-    }
-
-    ngOnInit(): void {
-        this.getCartItems();
     }
 }

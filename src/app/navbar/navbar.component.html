@@ -1,7 +1,11 @@
 <nav class="nav">
     <div class="container">
         <div class="nav__list">
-            <div class="nav__list-left">
+            <div (click)="handleMenu()" class="burger">
+                <img src="../../assets/burger-icon.png" alt="burger menu">
+            </div>
+
+            <div class="nav__list-left" #NavLeftMenu>
                 <div class="nav__list-item">
                     <img routerLink="/{{ langS.activeLang }}" routerLinkActive="active home"
                         [routerLinkActiveOptions]="{exact: true}" class="nav__logo" src="../../assets/logo.png"
@@ -39,9 +43,6 @@
                 </a>
                 <div *ngIf="userS.isLogin" routerLink="/{{ langS.activeLang }}/account" class="nav__login-user">
                     <img class="nav__login-userIcon" src="../../assets/user-icon.png" alt="user">
-                    <!-- <p class="nav__login-username">
-                        {{ userS.user.username }}
-                    </p> -->
                 </div>
                 <p-dropdown class="nav__list-languages" [(ngModel)]="selectedLang" (onChange)="changeLanguage($event)"
                     [options]="langS.languages">
